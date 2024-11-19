@@ -17,6 +17,9 @@ The model was trained and evaluated on a dataset consisting of diverse garbage i
 ## Why This Model Configuration is Optimal
 We have tested various configurations, including models with higher accuracy on the training data. However, those models exhibited signs of overfitting, where the model performs well on the training data but poorly on unseen data. Overfitting reduces the model's generalizability and makes it less reliable for real-world applications.
 
+### Transfer Learning and Fine-Tuning
+The model utilizes transfer learning with the `MobileNetV2` architecture. Transfer learning allows us to leverage the pre-trained weights of `MobileNetV2`, which was trained on the ImageNet dataset. We then fine-tuned the model by training the last 70 layers of `MobileNetV2`, while keeping the remaining layers frozen. This approach helps in achieving better performance with relatively less training data and computational resources.
+
 ### Key Points:
 - **Balanced Performance**: The current model strikes a balance between training accuracy and validation accuracy, ensuring it generalizes well to new data.
 - **Reduced Overfitting**: By avoiding excessively high accuracy on training data, the model remains robust and reliable when predicting on unseen data.
@@ -30,13 +33,11 @@ For further improvements, we suggest continuing to explore data augmentation tec
 ## How to Use
 To use this model for your own predictions, follow these steps:
 1. Load the pre-trained model (`model.h5`).
-2. Preprocess your images to match the input requirements of the model (224x224 pixels, normalized).
+2. Preprocess your images to match the input requirements of the model (`(224x224)` pixels, normalized).
 3. Use the model's `predict` method to classify new images.
 
 For more detailed instructions, please refer to the code and comments provided in the repository.
 
 ## Author
-Developed by [Your Name]
-
-For any questions or contributions, feel free to reach out!
+Developed by C242-PS210 Team
 
