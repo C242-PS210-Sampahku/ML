@@ -3,6 +3,9 @@
 ## Overview
 This project aims to classify various types of garbage into different categories using a convolutional neural network (CNN) model. The categories include batteries, biological waste, cardboard, clothes, glass, metal, paper, plastic, shoes, and general trash.
 
+## Dataset
+The dataset contains 10 distinct categories of waste items, carefully classified into the following types: metal, glass, biological, paper, battery, trash, cardboard, shoes, clothes, and plastic. Each category includes a diverse collection of samples that represent real-world waste materials, making it suitable for training and testing machine learning models aimed at waste classification or recycling initiatives. The dataset provides a rich variety of features, enabling the development of models capable of recognizing and sorting different types of waste effectively. [Link Dataset](https:www.kaggle.com/datasets/sumn2u/garbage-classification-v2?select=garbage-dataset).
+
 ## Model Performance
 The model was trained and evaluated on a dataset consisting of diverse garbage images. Below are the key performance metrics for the current model configuration:
 
@@ -35,6 +38,11 @@ To use this model for your own predictions, follow these steps:
 1. Load the pre-trained model (`model.h5`).
 2. Preprocess your images to match the input requirements of the model (`(224x224)` pixels, normalized).
 3. Use the model's `predict` method to classify new images.
+
+To use this model with .bin and .json file, follow these steps:
+1. Load the model architecture from `.json` file and weights from `.bin` file.
+2. Resize image to `224x224` pixels and normalize pixel values to be in the range `[0, 1]`.
+3. Use the model’s `predict` method to classify preprocessed images.
 
 For more detailed instructions, please refer to the code and comments provided in the repository.
 
